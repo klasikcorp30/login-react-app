@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button';
+import swal from 'sweetalert2';
 
 class Home extends Component {
     textColor = {
@@ -7,11 +7,16 @@ class Home extends Component {
         textAlign: 'center',
         fontSize: "bold"
     }
+
     render() {
         return (
             <div>
-                <h1 style={this.textColor}>Hello you have been logged in :) </h1>
-                <Button onClick={this.returnPageHandler}> Logout </Button>
+                <h1 style={this.textColor}>Welcome!! </h1>
+                { swal(
+                'Logged in Successfully!',
+                'You have been logged in to this Rect App',
+                'success'
+            )}
             </div>
         );
     }

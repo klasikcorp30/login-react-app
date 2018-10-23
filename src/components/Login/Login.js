@@ -16,15 +16,22 @@ class Login extends Component {
   state = {
       login: false
   }
+
   onLoginHandler = () => {
       this.setState({
           login: true
       })
-  }
+    }
+  onLogoutHandler = () => {
+      this.setState({
+          login: false
+      })
+  }  
+  
   render() {
         return (
             <div>
-                {this.state.login ? <div className="container"><Home /></div>
+                {this.state.login ? <div className="container"><Home /> <Button click={this.onLogoutHandler}>Logout</Button></div>
                 :
                 <div className="container">    
                     <h1> Login</h1>
